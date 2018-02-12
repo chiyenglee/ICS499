@@ -1,22 +1,30 @@
     //Countdown Timer
-	var seconds = 60;
-	document.getElementById('countdown').innerHTML = seconds;
+	//var seconds = 60;
+	//document.getElementById('countdown').innerHTML = seconds;
+	var timerstarted = false;
 	
-    function secondPassed() {
-        document.getElementById('countdown').innerHTML = seconds;
-		seconds--;
-        if (seconds < 0) {
-            clearInterval('countdown');
-            document.getElementById('countdown').innerHTML = "Time's up";
-        }
-		else{
+	//have the interval start when the key is pressed. timerstarted ensures it only happens once.
+    function keyPressEvent() {
+		if(timerstarted == false) {
+			setTimeout(secondPassed,1000);
+			timerstarted = true;
+		}
+	}
+	
+	function secondPassed(){
+		//get current timer on screen
+		var currenttimer = document.getElementById('countdown').innerHTML;
+		//if timer is 0, say time's up
+		if(currenttimer==0 || currenttimer=="0"){
+			document.getElementById('countdown').innerHTML = "Time's up"
+		}
+		//subtract 1 second from current timer
+		else {
+			currenttimer--;
+			document.getElementById('countdown').innerHTML = currenttimer--;
 			setTimeout(secondPassed,1000);
 		}
-	
     }
-	function keyClicked(){
-		//var countdownTimer = setInterval('secondPassed()', 1000);
-	}
 	
 	//Generate shuffle Words
 	function generateWords(){
