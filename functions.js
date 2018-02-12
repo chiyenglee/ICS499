@@ -1,15 +1,22 @@
     //Countdown Timer
 	var seconds = 60;
+	document.getElementById('countdown').innerHTML = seconds;
+	
     function secondPassed() {
         document.getElementById('countdown').innerHTML = seconds;
-        if (seconds == 0) {
-            clearInterval(countdownTimer);
+		seconds--;
+        if (seconds < 0) {
+            clearInterval('countdown');
             document.getElementById('countdown').innerHTML = "Time's up";
-        } else {
-            seconds--;
         }
+		else{
+			setTimeout(secondPassed,1000);
+		}
+	
     }
-    var countdownTimer = setInterval('secondPassed()', 1000);
+	function keyClicked(){
+		//var countdownTimer = setInterval('secondPassed()', 1000);
+	}
 	
 	//Generate shuffle Words
 	function generateWords(){
