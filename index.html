@@ -5,7 +5,7 @@
 	<body>
 	<div align="center">
 		<textarea readonly id="textArea" rows="10" cols="50"> </textarea><br>
-		<textarea id="typing_space" class="form-control" placeholder="press any key to begin" rows="1" wrap="off" id="typing_space" style="font-size:12px ; padding6px; text-align:center;" onkeypress="keyPressEvent()"></textarea>
+		<textarea id="typing_space" class="form-control" placeholder="press any key to begin" rows="1" wrap="off" id="typing_space" style="font-size:12px ; padding6px; text-align:center;" onkeypress="keyPressEvent(event,this)"></textarea>
 		<span id="countdown" class="timer"> 60 </span>
 		<!--<button id="refreshBut"> <img src="refresh.png"> </button> -->
 	</div>

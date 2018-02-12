@@ -1,13 +1,26 @@
-    //Countdown Timer
-	//var seconds = 60;
-	//document.getElementById('countdown').innerHTML = seconds;
 	var timerstarted = false;
-	
+	var count = 0;
+	var words = ["ants","arc", "ark", "about", "all", "also", "and", "as", "at", "art", 
+		"be", "bear", "bee", "been", "but", "by", "can", "come", "could", "day", "do", "even", 
+		"find", "first", "for", "from", "gem" ,"get", "give", "go", "have", "he", "her", "here", 
+		"hill", "him", "his", "how", "eye", "if", "in", "into", "it", "its", "jam", "jelly", "just", 
+		"know", "like", "look", "make", "man", "many", "me","men", "more", "my", "new", "no", "not",
+		"now", "of", "on", "one", "only", "or", "other", "our", "out", "pan","pit", "say", "see", 
+		"she", "so", "some", "take", "tell", "than", "that", "the", "their", "them", "then", "there",
+		"these","they", "thing", "think", "this", "those", "time", "to", "two", "up", "use", "very",
+		"want", "way", "we", "well", "what", "with", "witch", "who", "will", "with", "wood", "year",
+		"you", "your", "zoo"];
+	// Countdown Timer Function
 	//have the interval start when the key is pressed. timerstarted ensures it only happens once.
-    function keyPressEvent() {
-		if(timerstarted == false) {
+    function keyPressEvent(e) {
+		if(timerstarted == false) {  //timer starts
 			setTimeout(secondPassed,1000);
 			timerstarted = true;
+		}
+		if(e.keyCode == 32){
+			var word = document.getElementById('typing_space').value;
+			//checkWord(word);
+			document.getElementById('typing_space').value = ""; //clear text area.
 		}
 	}
 	
@@ -28,18 +41,10 @@
 	
 	//Generate shuffle Words
 	function generateWords(){
-		var words = ["ants","arc", "ark", "about", "all", "also", "and", "as", "at", "art", 
-		"be", "bear", "bee", "been", "but", "by", "can", "come", "could", "day", "do", "even", 
-		"find", "first", "for", "from", "gem" ,"get", "give", "go", "have", "he", "her", "here", 
-		"hill", "him", "his", "how", "eye", "if", "in", "into", "it", "its", "jam", "jelly", "just", 
-		"know", "like", "look", "make", "man", "many", "me","men", "more", "my", "new", "no", "not",
-		"now", "of", "on", "one", "only", "or", "other", "our", "out", "pan","pit", "say", "see", 
-		"she", "so", "some", "take", "tell", "than", "that", "the", "their", "them", "then", "there",
-		"these","they", "thing", "think", "this", "those", "time", "to", "two", "up", "use", "very",
-		"want", "way", "we", "well", "what", "with", "witch", "who", "will", "with", "wood", "year",
-		"you", "your", "zoo"];
 		
 		shuffleArray(words);
+		//var location = document.getElementById("textArea");
+		//location.style.color='green';
 		document.getElementById("textArea").innerHTML = words.join(" ");
 		
 	}
@@ -53,4 +58,9 @@
         array[i] = array[j];
         array[j] = temp;
 		}
+	}
+	
+	//check words
+	function checkWord(word){
+
 	}
