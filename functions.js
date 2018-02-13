@@ -43,9 +43,16 @@
 	function generateWords(){
 		
 		shuffleArray(words);
+		var textareaHtml = "";
+		words.forEach(function(element){
+			textareaHtml += "<span id='"+ element+ "'>"+element+"</span>&nbsp";
+		});
 		//var location = document.getElementById("textArea");
 		//location.style.color='green';
-		document.getElementById("textArea").innerHTML = words.join(" ");
+		document.getElementById("textArea").innerHTML = textareaHtml;
+		var currentWord = document.getElementById(words[count]);
+		currentWord.className = "currentWord";
+		//currentWord.style.backgroundColor='gray';
 		
 	}
 	generateWords();
@@ -62,5 +69,6 @@
 	
 	//check words
 	function checkWord(word){
-
+		//var checkWord = document.getElementById(word);
+		//if(word==checkWord
 	}

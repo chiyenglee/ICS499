@@ -1,0 +1,33 @@
+#refreshBut{
+}
+
+#textArea{
+	max-height:8em;
+	width: 30em;
+	border: .10em solid black;
+	text-align: left;
+	padding: 1em 2em;
+	line-height: 1.5em;
+	overflow-y: scroll;
+}
+
+#typing_space{
+	width: 20em;
+}
+
+span {
+	display: inline-block;
+}
+
+.wrongWord{
+	color:red;
+}
+
+.correctWord{
+	color:green;
+}
+
+.currentWord{
+	color:white;
+	background:#a2a2a2;
+}
