@@ -1,4 +1,12 @@
 #refreshBut{
+	background-image: url(./images/refresh.png);
+    background-size:cover;
+    background-position:center;
+    width: 3em;
+    height: 3em;
+	background-color:#b2d4c7;
+	border: none;
+	vertical-align: botton;
 }
 
 #textArea{
@@ -6,13 +14,24 @@
 	width: 30em;
 	border: .10em solid black;
 	text-align: left;
-	padding: 1em 2em;
+	padding: 1em 1.5em;
 	line-height: 1.5em;
 	overflow-y: scroll;
 }
 
 #typing_space{
 	width: 20em;
+	vertical-align: botton;
+}
+
+#countdown{
+	display: inline-block;
+	border: .10em solid none;
+	padding: .2em .3em;
+	font-size: 20px;
+	background-color:#5d9882;
+	color: white;
+	vertical-align: bottom;
 }
 
 span {

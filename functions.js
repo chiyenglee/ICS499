@@ -1,5 +1,8 @@
 	var timerstarted = false;
 	var count = 0;
+	var correctNum=0;
+	var incorrectNum=0;
+	
 	var words = ["ants","arc", "ark", "about", "all", "also", "and", "as", "at", "art", 
 		"be", "bear", "bee", "been", "but", "by", "can", "come", "could", "day", "do", "even", 
 		"find", "first", "for", "from", "gem" ,"get", "give", "go", "have", "he", "her", "here", 
@@ -10,6 +13,7 @@
 		"these","they", "thing", "think", "this", "those", "time", "to", "two", "up", "use", "very",
 		"want", "way", "we", "well", "what", "with", "witch", "who", "will", "with", "wood", "year",
 		"you", "your", "zoo"];
+		
 	// Countdown Timer Function
 	//have the interval start when the key is pressed. timerstarted ensures it only happens once.
     function keyPressEvent(e) {
@@ -19,7 +23,7 @@
 		}
 		if(e.keyCode == 32){
 			var word = document.getElementById('typing_space').value;
-			//checkWord(word);
+			checkWord(word);
 			document.getElementById('typing_space').value = ""; //clear text area.
 		}
 	}
@@ -30,6 +34,8 @@
 		//if timer is 0, say time's up
 		if(currenttimer==0 || currenttimer=="0"){
 			document.getElementById('countdown').innerHTML = "Time's up"
+			//alert(correctNum);
+			confirm("Score\nCorrect: "+correctNum+"\nIncorrect: "+incorrectNum);
 		}
 		//subtract 1 second from current timer
 		else {
@@ -47,12 +53,9 @@
 		words.forEach(function(element){
 			textareaHtml += "<span id='"+ element+ "'>"+element+"</span>&nbsp";
 		});
-		//var location = document.getElementById("textArea");
-		//location.style.color='green';
 		document.getElementById("textArea").innerHTML = textareaHtml;
 		var currentWord = document.getElementById(words[count]);
 		currentWord.className = "currentWord";
-		//currentWord.style.backgroundColor='gray';
 		
 	}
 	generateWords();
@@ -67,8 +70,27 @@
 		}
 	}
 	
-	//check words
-	function checkWord(word){
-		//var checkWord = document.getElementById(word);
-		//if(word==checkWord
+	//reset button  ##need to stop the timer from countdown right away
+	function resetButton(){
+		document.getElementById('countdown').innerHTML = "60";
+		timerstarted=false;
+		count=0;
+		generateWords();
+	}
+	
+	//check words  ##doesn't compare word correctly
+	function checkWord(word){	
+		var currentWord = document.getElementById(words[count]);
+		if(words[count] == word.trim()){
+			currentWord.className = "correctWord";
+			correctNum++;
+		}
+		else{
+			currentWord.className = "wrongWord";
+			incorrectNum++;
+		}
+		
+		count++;
+		var currentWord = document.getElementById(words[count]);
+		currentWord.className = "currentWord";
 	}
