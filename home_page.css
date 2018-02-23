@@ -1,0 +1,130 @@
+body {
+  margin: 0;
+  font-size: 28px;
+}
+
+/* header */
+#topbar{
+	background-color: #f1f1f1;
+}
+#topbar a {
+	text-decoration: none;
+	color: black;
+	padding: 6px 8px;
+	font-size: 18px;
+}
+#topbar a:hover {
+  background-color: blue;
+  color: white;
+}
+#login {
+	margin-left:1150px;
+}
+
+/* navigation bar */
+#navbar {
+  overflow: hidden;
+  background-color: #76c540;
+}
+
+#navbar a {
+  float: left;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 20px 27px;
+  text-decoration: none;
+  font-size: 20px;
+}
+.active{
+  background-color: purple !important;
+  color: white !important;
+  margin-left:130px;
+}
+#navbar a:hover{
+	color:black;
+}
+#gameslvl{
+	margin-left: 147px;
+}
+#inform{
+	margin-left: 210px;
+	
+}
+.content {
+  padding: 16px;
+}
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%
+}
+
+.sticky + .content {
+  padding-top: 60px;
+}
+
+/* top body */
+.top_body {
+	height:40px;
+	background-color: #f1f1f1;
+    text-align: center;
+}
+
+/* title link for image */
+.text_title {
+	text-decoration: none;
+	font-size:20px;
+	color:black;
+}
+.text_title:hover{
+	color:blue;
+	border-bottom: 1px solid blue;
+}
+
+/* quick game */
+.quick_game{
+	margin-top:63px;
+	height:300px;
+	width:600px;
+	transition: transform .2s;
+}
+.quick_game:hover{
+	transform: scale(1.1);
+}
+
+/* different levels games */
+.levels{
+	height:200px;
+	width:300px;
+	margin:10px;
+	transition: transform .2s;
+}
+.levels:hover{
+	transform: scale(1.1);
+}
+
+/* footer */
+.footer	{
+	background-color: #f1f1f1;
+    text-align: center;
+    height: 250px;
+    margin-top:1035px;
+}
+.footer1	{
+	background-color: #76c540;
+    text-align: center;
+    height: 60px;
+}
+
+/* go top */
+#top a{
+	text-align:center;
+	color:white;
+	text-decoration: none;
+	font-size:20px;
+}
+#top a:hover{
+	color:purple;
+}
+
